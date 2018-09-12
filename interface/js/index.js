@@ -18,7 +18,15 @@ Vue.use(Vuex)
 // 
 // Setup Tooltips
 import VTooltip from 'v-tooltip'
-Vue.use(VTooltip)
+Vue.use(VTooltip, {
+    defaultPopperOptions: {
+        modifiers: {
+            computeStyle: {
+                gpuAcceleration: false
+            }
+        }
+    }
+})
 
 // 
 // Setup FontAwesome
