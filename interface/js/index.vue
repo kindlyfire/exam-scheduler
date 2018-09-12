@@ -20,6 +20,11 @@
                 <fa-icon icon="pencil-alt" class="pane-icon"
                     v-tooltip.right="{content: 'Examens', classes: 'panel-pane-1-tooltip'}"/>
             </router-link>
+
+            <router-link to="/run" style="margin-top: auto">
+                <fa-icon icon="play" class="pane-icon"
+                    v-tooltip.right="{content: 'Examens', classes: 'panel-pane-1-tooltip'}"/>
+            </router-link>
         </div>
         <div class="panel-pane panel-pane-2"><p>List</p></div>
         <div class="panel-pane panel-pane-3"><p>Other</p></div>
