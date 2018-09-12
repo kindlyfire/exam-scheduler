@@ -1,0 +1,6 @@
+
+# NodeJS
+**/node_modules
+
+# Dolphin file manager settings
+**/.directory
