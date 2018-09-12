@@ -14,7 +14,7 @@ function createWindow () {
         height: 800,
         backgroundColor: '#fafafa',
     })
-    win.loadFile('html/index.html')
+    win.loadFile('dist/index.html')
 }
 
 app.on('ready', createWindow)

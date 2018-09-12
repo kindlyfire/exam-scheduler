@@ -4,3 +4,10 @@
 
 # Dolphin file manager settings
 **/.directory
+
+# Cache files
+**/.cache
+
+# Dist files
+interface/dist/*
+!interface/dist/.gitkeep

@@ -7,11 +7,15 @@
     "start": "electron ."
   },
   "devDependencies": {
+    "@vue/component-compiler-utils": "^2.2.0",
     "electron": "^2.0.9"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.4",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@fortawesome/vue-fontawesome": "^0.1.1",
     "babelify": "^10.0.0",
     "browserify": "^16.2.2",
     "cssnano": "^4.1.0",
@@ -23,9 +27,14 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
     "gulplog": "^1.0.0",
+    "npm-font-open-sans": "^1.1.0",
+    "v-tooltip": "^2.0.0-rc.33",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "vue": "^2.5.17",
-    "vueify": "^9.4.1"
+    "vue-devtools": "^4.1.4",
+    "vue-router": "^3.0.1",
+    "vueify": "^9.4.1",
+    "vuex": "^3.0.1"
   }
 }

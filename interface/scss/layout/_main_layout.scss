@@ -1,0 +1,52 @@
+
+.panel-container {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    .panel-pane {
+        height: 100%;
+    }
+
+    .panel-pane-1 {
+        width: $panel-pane-1-w;
+        background: $panel-pane-1-bg;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .pane-icon {
+            display: block;
+            padding: 17px;
+            width: $panel-pane-1-w;
+            height: $panel-pane-1-w;
+            color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            outline: none;
+
+            &:hover {
+                color: rgba(0, 0, 0, 0.7);
+            }
+        }
+
+        .router-link-active .pane-icon {
+            color: rgba(0, 0, 0, 0.7);
+        }
+    }
+
+    .panel-pane-2 {
+        width: $panel-pane-2-w;
+        background: $panel-pane-2-bg;
+    }
+
+    .panel-pane-3 {
+        background: $panel-pane-3-bg;
+    }
+}
+
+.panel-pane-1-tooltip[x-placement^="right"] {
+    margin-left: 0;
+}
