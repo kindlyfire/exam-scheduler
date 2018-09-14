@@ -39,6 +39,7 @@
 import panes from './panes.js'
 
 export default {
+    name: 'panel',
     data() {
         return {}
     },
