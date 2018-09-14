@@ -44,6 +44,11 @@
 
     .panel-pane-3 {
         background: $panel-pane-3-bg;
+        flex-grow: 1;
+
+        .pane-container {
+            padding: 20px 20px;
+        }
     }
 }
 

@@ -28,6 +28,8 @@ export default {
 
             return this.elements
                 .map((el, id) => {
+                    // The best way to deep clone an object
+                    el = JSON.parse(JSON.stringify(el))
                     el.id = id
                     return el
                 })

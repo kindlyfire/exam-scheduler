@@ -27,21 +27,24 @@
             </router-link>
         </div>
         <div class="panel-pane panel-pane-2">
-            <component :is="leftPaneComp"></component>
+            <component :is="leftPaneComp" :panelBus="bus"></component>
         </div>
         <div class="panel-pane panel-pane-3">
-            <component :is="rightPaneComp"></component>
+            <component :is="rightPaneComp" :panelBus="bus"></component>
         </div>
     </div>
 </template>
 
 <script>
+import Vue from 'vue'
 import panes from './panes.js'
 
 export default {
     name: 'panel',
     data() {
-        return {}
+        return {
+            bus: new Vue()
+        }
     },
     computed: {
         panelName() {
@@ -52,6 +55,11 @@ export default {
         },
         rightPaneComp() {
             return panes[this.panelName].rightPane
+        }
+    },
+    watch: {
+        panelName() {
+            this.bus = new Vue()
         }
     }
 }

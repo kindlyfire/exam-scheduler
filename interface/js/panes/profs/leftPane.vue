@@ -1,5 +1,5 @@
 <template>
-    <pane-list :elements="profs" :active-resource-id="activeResourceId" :searchable-fields="['name']" :bus="bus">
+    <pane-list :elements="profs" :active-resource-id="activeResourceId" :searchable-fields="['name']" :bus="paneListBus">
         <template slot="buttons">
             <div @click="openProfCreator" class="action" v-tooltip.bottom="{content: 'Ajouter un professeur', classes: 'pane-list-tooltip'}"><fa-icon icon="plus" /></div>
         </template>
@@ -16,28 +16,40 @@ import paneList from '../../components/pane-list.vue'
 
 export default {
     name: 'prof-left-pane',
+
+    props: ['panelBus'],
+
     data() {
         return {
-            bus: new Vue()
+            // Bus shared with the pane list
+            paneListBus: new Vue(),
+
+            // Active prof ID
+            activeResourceId: -1
         }
     },
+
     computed: mapState({
-        profs: state => state.data.profs.children,
-        activeResourceId: state => state.panel.id
+        profs: state => state.data.profs.children
     }),
-    components: {
-        paneList
+
+    created() {
+        this.paneListBus.$on('panel-list:element:click', (id) => {
+            this.activeResourceId = id
+            this.panelBus.$emit('changeProfId', id)
+        })
     },
     methods: {
         openProfCreator() {
-            console.log('Open')
+            // Prevent deleting tmp user by clicking on the button twice
+            if (this.activeResourceId === -1) return
+
+            this.panelBus.$emit('changeProfId', -1)
+            this.activeResourceId = -1
         }
     },
-    created() {
-        this.bus.$on('panel-list:element:click', (id) => {
-            console.log(id)
-            this.$store.commit('changePanelId', id)
-        })
+    components: {
+        paneList
     }
 }
 </script>
