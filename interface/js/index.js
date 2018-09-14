@@ -22,6 +22,7 @@ Vue.use(VTooltip, {
     defaultPopperOptions: {
         modifiers: {
             computeStyle: {
+                // GPU acceleration makes tooltips blurry due to a chromium bug
                 gpuAcceleration: false
             }
         }

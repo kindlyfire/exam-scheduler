@@ -9,3 +9,6 @@ export const router = new VueRouter({
         {path: "/examens", component: {}},
     ]
 })
+
+// Open /profs when the app launches
+router.replace('/profs')
