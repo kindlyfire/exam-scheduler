@@ -1,5 +1,5 @@
 
-import Vue from 'vue'
+import Vue from 'vue/dist/vue.common'
 import index from './index.vue'
 import createStore from './store'
 import { router } from './routes'

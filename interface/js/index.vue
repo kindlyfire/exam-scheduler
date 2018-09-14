@@ -23,10 +23,42 @@
 
             <router-link to="/run" style="margin-top: auto">
                 <fa-icon icon="play" class="pane-icon"
-                    v-tooltip.right="{content: 'Examens', classes: 'panel-pane-1-tooltip'}"/>
+                    v-tooltip.right="{content: 'Calculer un horaire', classes: 'panel-pane-1-tooltip'}"/>
             </router-link>
         </div>
-        <div class="panel-pane panel-pane-2"><p>List</p></div>
-        <div class="panel-pane panel-pane-3"><p>Other</p></div>
+        <div class="panel-pane panel-pane-2">
+            <component :is="leftPaneComp"></component>
+        </div>
+        <div class="panel-pane panel-pane-3">
+            <component :is="rightPaneComp"></component>
+        </div>
     </div>
 </template>
+
+<script>
+import profsLeftPane from './panel/profs/leftPane.vue'
+import profsRightPane from './panel/profs/rightPane.vue'
+
+const panes = {
+    profs: {
+        leftPane: profsLeftPane,
+        rightPane: profsRightPane
+    }
+}
+
+export default {
+    data() {
+        return {
+            panelName: 'profs'
+        }
+    },
+    computed: {
+        leftPaneComp() {
+            return panes[this.panelName].leftPane
+        },
+        rightPaneComp() {
+            return panes[this.panelName].rightPane
+        }
+    }
+}
+</script>
