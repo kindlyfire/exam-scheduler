@@ -27,10 +27,10 @@
             </router-link>
         </div>
         <div class="panel-pane panel-pane-2">
-            <component :is="leftPaneComp" :panelBus="bus"></component>
+            <component :is="leftPaneComp" :panel-bus="bus"></component>
         </div>
         <div class="panel-pane panel-pane-3">
-            <component :is="rightPaneComp" :panelBus="bus"></component>
+            <component :is="rightPaneComp" :panel-bus="bus"></component>
         </div>
     </div>
 </template>
