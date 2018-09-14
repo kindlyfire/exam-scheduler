@@ -28,8 +28,8 @@ export default () => new Vuex.Store({
         }
     },
     mutations: {
-        changePanelView (state) {
-
+        changePanelView (state, name) {
+            state.panelName = name
         }
     }
 })

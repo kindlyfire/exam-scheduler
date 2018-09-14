@@ -2,18 +2,28 @@
 import Vue from 'vue/dist/vue.common'
 import index from './index.vue'
 import createStore from './store'
-import { router } from './routes'
+
+// 
+// Setup Vuex
+import Vuex from 'vuex'
+Vue.use(Vuex)
+
+const store = createStore()
 
 // 
 // Setup Vue router
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
-// 
-// Setup Vuex
-import Vuex from 'vuex'
+import { router } from './routes'
+router.beforeEach((to, from, next) => {
+    var name = to.path.split('/')[1]
+    store.commit('changePanelView', name)
+    next()
+})
 
-Vue.use(Vuex)
+// Open /profs when the app launches
+router.replace('/profs')
 
 // 
 // Setup Tooltips
@@ -44,7 +54,7 @@ Vue.config.productionTip = false
 
 new Vue({
     el: '#app',
-    store: createStore,
+    store,
     router,
     render (h) {
         return h(index)

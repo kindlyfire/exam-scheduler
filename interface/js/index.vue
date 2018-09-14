@@ -6,7 +6,7 @@
                 <fa-icon icon="user-tie" class="pane-icon"
                     v-tooltip.right="{content: 'Professeurs', classes: 'panel-pane-1-tooltip'}"/>
             </router-link>
-            <router-link to="/salles">
+            <router-link to="/rooms">
                 <fa-icon icon="square" class="pane-icon"
                     v-tooltip.right="{content: 'Salles', classes: 'panel-pane-1-tooltip'}"/>
             </router-link>
@@ -16,7 +16,7 @@
                     v-tooltip.right="{content: 'Classes', classes: 'panel-pane-1-tooltip'}"/>
             </router-link>
             
-            <router-link to="/examens">
+            <router-link to="/exams">
                 <fa-icon icon="pencil-alt" class="pane-icon"
                     v-tooltip.right="{content: 'Examens', classes: 'panel-pane-1-tooltip'}"/>
             </router-link>
@@ -36,23 +36,16 @@
 </template>
 
 <script>
-import profsLeftPane from './panel/profs/leftPane.vue'
-import profsRightPane from './panel/profs/rightPane.vue'
-
-const panes = {
-    profs: {
-        leftPane: profsLeftPane,
-        rightPane: profsRightPane
-    }
-}
+import panes from './panes.js'
 
 export default {
     data() {
-        return {
-            panelName: 'profs'
-        }
+        return {}
     },
     computed: {
+        panelName() {
+            return this.$store.state.panelName
+        },
         leftPaneComp() {
             return panes[this.panelName].leftPane
         },
