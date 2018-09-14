@@ -4,19 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "parcel build html/index.html --public-url ./ -t electron",
+    "watch": "parcel watch html/index.html --public-url ./ -t electron"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.2.0",
-    "electron": "^2.0.9"
+    "electron": "^2.0.9",
+    "node-sass": "^4.9.3",
+    "vue-template-compiler": "^2.5.17"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
     "@fortawesome/vue-fontawesome": "^0.1.1",
+    "parcel-bundler": "^1.9.7",
     "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.5.17",
     "vue-devtools": "^4.1.4",
+    "vue-hot-reload-api": "^2.3.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   }
