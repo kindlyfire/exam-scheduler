@@ -1,0 +1,11 @@
+
+.alert {
+    padding: 11px 14px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 0;
+
+    &.alert-warn {
+        background-color: #fff3cd;
+        color: #775a04;
+    }
+}

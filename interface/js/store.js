@@ -34,14 +34,5 @@ export default () => new Vuex.Store({
         changePanelView (state, name) {
             state.panelName = name
         },
-        changePanelAction (state, action) {
-            state.panel.action = action
-        },
-        changePanelId (state, id) {
-            state.panel.id = id
-        },
-        addProf() {
-            return "69"
-        }
     }
 })

@@ -25,7 +25,7 @@ export default {
             paneListBus: new Vue(),
 
             // Active prof ID
-            activeResourceId: -1
+            activeResourceId: -2
         }
     },
 
@@ -45,7 +45,7 @@ export default {
             if (this.activeResourceId === -1) return
 
             this.panelBus.$emit('changeProfId', -1)
-            this.activeResourceId = -1
+            this.activeResourceId = -2
         }
     },
     components: {
