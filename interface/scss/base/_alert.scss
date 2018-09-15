@@ -8,4 +8,10 @@
         background-color: #fff3cd;
         color: #775a04;
     }
+
+    &.alert-error {
+        color: #50141a;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }
 }

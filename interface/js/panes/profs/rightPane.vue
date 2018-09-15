@@ -5,8 +5,14 @@
         </template>
 
         <template v-else>
-            <p v-if="prof.id < 0" @click="saveProf" class="alert alert-warn text-center cursor-pointer">Ajouter le/la prof</p>
-            <p v-else class="alert text-center fw-300"><i>Sauvegardé</i></p>
+            <div class="d-flex flex-row">
+                <p v-if="prof.id < 0" @click="saveProf" class="alert alert-warn text-center cursor-pointer flex-grow">Ajouter le/la prof</p>
+                <p v-else class="alert text-center fw-300 flex-grow"><i>Sauvegardé</i></p>
+
+                <p class="alert alert-error cursor-pointer" @click="deleteProf">
+                    <fa-icon icon="trash" />
+                </p>
+            </div>
 
             <div class="pane-container">
                 <input v-model="prof.name" type="text" class="input input-lg d-block w-100" placeholder="Nom">
@@ -16,17 +22,10 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
     name: 'prof-right-pane',
-
-    props: ['panelBus'],
-
-    created() {
-        this.panelBus.$on('changeProfId', this.changeProfId)
-    },
-    destroyed() {
-        this.panelBus.$off('changeProfId', this.changeProfId)
-    },
 
     data() {
         return {
@@ -34,37 +33,25 @@ export default {
                 id: null,
                 name: '',
                 blockedDates: []
-            },
-            prof: null
+            }
+        }
+    },
+
+    computed: {
+        ...mapState({
+            profs: state => state.data.profs,
+            profId: state => state.panes.profs.profId
+        }),
+
+        prof() {
+            return this.profs.find(p => p.id == this.profId) || null
         }
     },
 
     methods: {
-        changeProfId(id) {
-            let prof
+        saveProf() {},
 
-            if (id < 0) {
-                this.$set(this, 'prof', JSON.parse(JSON.stringify(this.emptyProf)))
-                this.prof.id = id
-            }
-            else {
-                this.$set(this, 'prof', this.$store.state.data.profs.children[id])
-            }
-        },
-
-        saveProf() {
-            // They are already saved
-            if (this.prof.id >= 0 || this.prof.name === '') return
-
-            let profs = this.$store.state.data.profs.children
-
-            // 
-            // @TODO: this is broken from the moment we start to actually use the "id" props of the profs objects
-            // 
-            this.prof.id = profs.length
-            profs.push(this.prof)
-            this.changeProfId(this.prof.id)
-        }
+        deleteProf() {}
     }
 }
 </script>

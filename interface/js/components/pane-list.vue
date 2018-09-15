@@ -5,7 +5,7 @@
             <slot name="buttons"></slot>
         </div>
         <div class="item-list">
-            <div v-for="(el, i) in shownElements" :key="i" class="item" :class="{active: i == activeResourceId}" @click="onClick(i)">
+            <div v-for="(el, i) in shownElements" :key="i" class="item" :class="{active: isActive(el)}" @click="onClick(el)">
                 <slot name="list-element" :element="el"></slot>
             </div>
         </div>
@@ -16,7 +16,7 @@
 import { mapState } from 'vuex'
 
 export default {
-    props: ['elements', 'activeResourceId', 'searchableFields', 'bus'],
+    props: ['elements', 'activeElement', 'searchableFields', 'bus'],
     data() {
         return {
             searchQuery: ''
@@ -27,11 +27,9 @@ export default {
             var words = this.searchQuery.split(' ')
 
             return this.elements
-                .map((el, id) => {
+                .map(el => {
                     // The best way to deep clone an object
-                    el = JSON.parse(JSON.stringify(el))
-                    el.id = id
-                    return el
+                    return JSON.parse(JSON.stringify(el))
                 })
                 .filter((el) => {
                     for (var field of this.searchableFields) {
@@ -52,8 +50,15 @@ export default {
         }
     },
     methods: {
-        onClick(id) {
-            this.bus.$emit('panel-list:element:click', id)
+        isActive(el) {
+            if (el != null && el.id !== undefined && this.activeElement != null && this.activeElement.id !== undefined) {
+                return el.id == this.activeElement.id
+            }
+
+            return false;
+        },
+        onClick(el) {
+            this.bus.$emit('click', el)
         }
     }
 }

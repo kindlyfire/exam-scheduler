@@ -1,38 +1,27 @@
 
 import Vuex from 'vuex'
 
+import dataStore from './data'
+import profPaneStore from './panes/profs/store'
+
+const panes = {
+    namespaced: true,
+    modules: {
+        profs: profPaneStore
+    }
+}
+
 export default () => new Vuex.Store({
     state: {
-        panelName: 'profs',
-        data: {
-            profs: {
-                groups: [
-
-                ],
-                children: [
-                    {
-                        id: 1,
-                        name: 'C. Belot'
-                    },
-                    {
-                        id: 2,
-                        name: 'I. Vanquaethem'
-                    },
-                    {
-                        id: 3,
-                        name: 'E. Michel'
-                    },
-                    {
-                        id: 4,
-                        name: 'G. Hublet'
-                    },
-                ]
-            }
-        }
+        panelName: 'profs'
     },
     mutations: {
         changePanelView (state, name) {
             state.panelName = name
         },
+    },
+    modules: {
+        data: dataStore,
+        panes
     }
 })
