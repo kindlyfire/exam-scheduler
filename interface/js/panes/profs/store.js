@@ -2,10 +2,10 @@
 export default {
     namespaced: true,
     state: {
-        // -1 == nothing selected
-        // -2 == creating prof
+        // null == nothing selected
+        // -1 == creating prof
         // >= 0 == editing prof
-        profId: -1
+        profId: null
     },
 
     mutations: {

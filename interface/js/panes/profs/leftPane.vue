@@ -27,7 +27,7 @@ export default {
 
     computed: {
         ...mapState({
-            profs: state => state.data.profs,
+            profs: state => state.data.profs.list,
             profId: state => state.panes.profs.profId
         }),
 
