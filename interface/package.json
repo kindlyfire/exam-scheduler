@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "electron .",
+    "start": "ELECTRON_DISABLE_SECURITY_WARNINGS=1 electron .",
     "build": "parcel build html/index.html --public-url ./ -t electron",
     "watch": "parcel watch html/index.html --public-url ./ -t electron"
   },
