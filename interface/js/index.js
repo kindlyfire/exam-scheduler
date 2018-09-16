@@ -23,7 +23,7 @@ router.beforeEach((to, from, next) => {
 })
 
 // Open /profs when the app launches
-router.replace('/profs')
+router.replace('/classes')
 
 // 
 // Setup Tooltips

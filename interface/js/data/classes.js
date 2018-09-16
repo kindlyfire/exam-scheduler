@@ -2,7 +2,12 @@
 export default {
     namespaced: true,
     state: {
-        list: []
+        list: [
+            {
+                id: 1,
+                name: '5TTr'
+            }
+        ]
     },
 
     mutations: {

@@ -3,11 +3,13 @@ import Vuex from 'vuex'
 
 import dataStore from './data'
 import profPaneStore from './panes/profs/store'
+import classPaneStore from './panes/classes/store'
 
 const panes = {
     namespaced: true,
     modules: {
-        profs: profPaneStore
+        profs: profPaneStore,
+        classes: classPaneStore
     }
 }
 
