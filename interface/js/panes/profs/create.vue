@@ -42,7 +42,7 @@ export default {
         },
 
         save() {
-            if (this.name == '') return
+            if (this.prof.name == '') return
 
             this.$store.commit('data/profs/add', this.prof)
             this.$store.commit('panes/profs/changeId', this.prof.id)

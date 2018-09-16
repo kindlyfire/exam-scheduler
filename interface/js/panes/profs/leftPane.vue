@@ -1,11 +1,11 @@
 <template>
-    <pane-list :elements="profs" :active-element="prof" :searchable-fields="['name']" :bus="paneListBus">
+    <pane-list :elements="profs" :active-element="prof" :searchable-fields="['name']" @click="onPaneListElementClick">
         <template slot="buttons">
             <div @click="openProfCreator" class="action" v-tooltip.bottom="{content: 'Ajouter un professeur', classes: 'pane-list-tooltip'}"><fa-icon icon="plus" /></div>
         </template>
 
         <template slot="list-element" slot-scope="{ element }">
-            {{ element.name }}
+            {{ element.name || '&lt;vide&gt;' }}
         </template>
     </pane-list>
 </template>
@@ -19,10 +19,7 @@ export default {
     name: 'prof-left-pane',
 
     data() {
-        return {
-            // Bus shared with the pane list
-            paneListBus: new Vue()
-        }
+        return {}
     },
 
     computed: {
@@ -34,13 +31,6 @@ export default {
         prof() {
             return this.profs.find(p => p.id == this.profId)
         }
-    },
-
-    created() {
-        this.paneListBus.$on('click', this.onPaneListElementClick)
-    },
-    destroyed() {
-        this.paneListBus.$off('click', this.onPaneListElementClick)
     },
 
     methods: {

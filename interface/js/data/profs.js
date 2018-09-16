@@ -34,6 +34,13 @@ export default {
 
         delete(state, prof) {
             state.list = state.list.filter((p) => p.id != prof.id)
+        },
+
+        update(state, info) {
+            let prof = state.list.find((p) => p.id == info.id)
+            
+            prof.name = info.prof.name
+            prof.blockedDates = info.prof.blockedDates
         }
     }
 }

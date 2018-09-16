@@ -16,7 +16,7 @@
 import { mapState } from 'vuex'
 
 export default {
-    props: ['elements', 'activeElement', 'searchableFields', 'bus'],
+    props: ['elements', 'activeElement', 'searchableFields'],
     data() {
         return {
             searchQuery: ''
@@ -24,13 +24,11 @@ export default {
     },
     computed: {
         shownElements() {
+            if (this.searchQuery == '') return this.elements
+            
             var words = this.searchQuery.split(' ')
 
             return this.elements
-                .map(el => {
-                    // The best way to deep clone an object
-                    return JSON.parse(JSON.stringify(el))
-                })
                 .filter((el) => {
                     for (var field of this.searchableFields) {
                         // Check that the fields content is a string
@@ -58,7 +56,7 @@ export default {
             return false;
         },
         onClick(el) {
-            this.bus.$emit('click', el)
+            this.$emit('click', el)
         }
     }
 }
