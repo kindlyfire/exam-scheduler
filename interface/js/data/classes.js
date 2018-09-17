@@ -6,6 +6,22 @@ export default {
             {
                 id: 1,
                 name: '5TTr'
+            },
+            {
+                id: 2,
+                name: '6TTr'
+            },
+            {
+                id: 3,
+                name: '6Ga'
+            },
+            {
+                id: 4,
+                name: '6Gb'
+            },
+            {
+                id: 5,
+                name: '6Gc'
             }
         ]
     },
@@ -22,6 +38,12 @@ export default {
 
         delete(state, cls) {
             state.list = state.list.filter((c) => c.id != cls.id)
+        },
+
+        update(state, info) {
+            let cls = state.list.find((c) => c.id == info.id)
+            
+            cls.name = info.cls.name
         }
     }
 }

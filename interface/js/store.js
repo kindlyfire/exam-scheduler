@@ -15,7 +15,8 @@ const panes = {
 
 export default () => new Vuex.Store({
     state: {
-        panelName: 'profs'
+        panelName: 'profs',
+        loaded: false
     },
     mutations: {
         changePanelView (state, name) {

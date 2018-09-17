@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ELECTRON_DISABLE_SECURITY_WARNINGS=1 electron .",
+    "start": "cross-env ELECTRON_DISABLE_SECURITY_WARNINGS=1 electron .",
     "build": "parcel build html/index.html --public-url ./ -t electron",
-    "watch": "parcel watch html/index.html --public-url ./ -t electron"
+    "watch": "parcel watch html/index.html --public-url ./ -t electron",
+    "devtools": "vue-devtools"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.2.0",
+    "cross-env": "^5.2.0",
     "electron": "^2.0.9",
     "node-sass": "^4.9.3",
     "vue-template-compiler": "^2.5.17"

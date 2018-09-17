@@ -70,7 +70,7 @@ export default {
 
         remove() {
             this.$store.commit('data/profs/delete', this.prof)
-            this.$store.commit('panes/profs/changeId', null)
+            this.$store.dispatch('panes/profs/changeIdClosest', this.prof.id)
         },
 
         save() {
