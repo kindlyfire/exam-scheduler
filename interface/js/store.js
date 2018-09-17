@@ -22,6 +22,10 @@ export default () => new Vuex.Store({
         changePanelView (state, name) {
             state.panelName = name
         },
+
+        loaded (state, status) {
+            state.loaded = !!status
+        }
     },
     modules: {
         data: dataStore,
