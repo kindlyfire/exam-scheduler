@@ -22,6 +22,11 @@ router.beforeEach((to, from, next) => {
     next()
 })
 
+//
+// Setup select
+import vSelect from 'vue-select'
+Vue.component('v-select', vSelect)
+
 // Open /profs when the app launches
 router.replace('/classes')
 

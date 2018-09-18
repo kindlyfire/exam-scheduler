@@ -16,13 +16,18 @@
         </div>
 
         <div class="pane-container">
-            <input v-model="cls.name" type="text" class="input input-lg d-block w-100" placeholder="Nom">
+            <input v-model="cls.name" @input="hasChanged" type="text" class="input input-lg d-block w-100" placeholder="Nom">
+
+            <p class="mt-1 mb-0">Ajouter un examen:</p>
+            <exam-list :cls="cls" @change="hasChanged"></exam-list>
         </div>
     </div>
 </template>
-e
+
 <script>
 import { mapState } from 'vuex'
+
+import examListComp from './examsListComp.vue'
 
 export default {
     data() {
@@ -35,22 +40,14 @@ export default {
 
     computed: {
         ...mapState({
-            classId: state => state.panes.classes.classId,
+            classId: state => state.panes.classes.classId
         }),
-
-        className() {
-            return this.cls.name
-        }
     },
 
     watch: {
         classId() {
             this.updateClass()
         },
-
-        className() {
-            this.changed = !this.classEquals(this.cls, this.uneditedClass)
-        }
     },
 
     methods: {
@@ -64,13 +61,13 @@ export default {
             }
         },
 
-        classEquals(c1, c2) {
-            return c1.name == c2.name
-        },
-
         remove() {
             this.$store.commit('data/classes/delete', this.cls)
             this.$store.dispatch('panes/classes/changeIdClosest', this.cls.id)
+        },
+
+        hasChanged() {
+            this.changed = true
         },
 
         save() {
@@ -87,6 +84,10 @@ export default {
 
     created() {
         this.updateClass()
+    },
+
+    components: {
+        examList: examListComp
     }
 }
 </script>

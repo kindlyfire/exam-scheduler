@@ -23,6 +23,7 @@ export default {
             let cls = state.list.find((c) => c.id == info.id)
             
             cls.name = info.cls.name
+            cls.exams = info.cls.exams
         }
     }
 }
