@@ -1,0 +1,174 @@
+classes:
+  4Ga: [4, 401]
+  4Gb: [4, 402]
+  4Gc: [4, 403]
+  4TTr: [4, 404]
+
+  5Ga: [5, 501]
+  5Gb: [5, 502]
+  5Gc: [5, 503]
+  5TTr: [5, 504]
+
+  6Ga: [6, 601]
+  6Gb: [6, 602]
+  6Gc: [6, 603]
+  6TTr: [6, 604]
+
+
+course_bundles:
+  0: []
+  4:
+    - 4_math
+    - 4_fr
+    - 4_hist
+    - 4_geo
+    - 4_sc_general
+    - 4_lang_1
+    - 4_lang_2
+  401:
+    - "!4_sc_general"
+    - 4_a_chimie
+    - 4_a_bio
+    - 4_a_physique
+  402:
+    - 4_b_eco
+  403:
+    - 4_c_social
+  404:
+    - "!4_lang_2"
+    - 4_ttr_lang_en
+    - 4_ttr_info
+    - 4_ttr_logi
+
+  5:
+    - 5_math
+    - 5_fr
+    - 5_hist
+    - 5_geo
+    - 5_sc_general
+    - 5_lang_1
+    - 5_lang_2
+  501:
+    - "!5_sc_general"
+    - 5_a_chimie
+    - 5_a_bio
+    - 5_a_physique
+  502:
+    - 5_b_eco
+  503:
+    - 5_c_social
+  504:
+    - "!5_lang_2"
+    - 5_ttr_info
+    - 5_ttr_prog
+    - 5_ttr_logi
+
+  6:
+    - 6_math
+    - 6_fr
+    - 6_hist
+    - 6_geo
+    - 6_sc_general
+    - 6_lang_1
+    - 6_lang_2
+  601:
+    - "!6_sc_general"
+    - 6_a_chimie
+    - 6_a_bio
+    - 6_a_physique
+  602:
+    - 6_b_eco
+  603:
+    - 6_c_social
+  604:
+    - "!6_lang_2"
+    - 6_ttr_prog
+    - 6_ttr_logi
+
+
+courses:
+  # 
+  # 4 ème
+  # 
+
+  # Général
+  4_math: ["C. Belot", 4]
+  4_fr: ["Vanquaethem I.", 4]
+  4_hist: ["Michel E.", 2]
+  4_geo: ["Hublet G.", 2]
+  4_lang_1: ["Jomouton I.", 4]
+  4_lang_2: ["Jomouton I.", 4]
+  4_sc_general: ["Derenne C.", 4]
+  
+  # Ga
+  4_a_chimie: ["De Buyser M.", 2]
+  4_a_bio: ["Derenne C.", 2]
+  4_a_physique: ["De Buyser M.", 2]
+
+  # Gb
+  4_b_eco: ["Marc C.", 4]
+  
+  # Gc
+  4_c_social: ["Lefèbre P.", 4]
+
+  # TTr
+  4_ttr_logi: ["Cauchie A.", 2]
+  4_ttr_info: ["Cauchie A.", 4]
+  4_ttr_lang_en: ["Goossens V.", 2]
+
+  # 
+  # 5 ème
+  # 
+
+  # Général
+  5_math: ["C. Belot", 4]
+  5_fr: ["Vanquaethem I.", 4]
+  5_hist: ["Michel E.", 2]
+  5_geo: ["Hublet G.", 2]
+  5_lang_1: ["Jomouton I.", 4]
+  5_lang_2: ["Jomouton I.", 4]
+  5_sc_general: ["Derenne C.", 4]
+  
+  # Ga
+  5_a_chimie: ["De Buyser M.", 2]
+  5_a_bio: ["Derenne C.", 2]
+  5_a_physique: ["De Buyser M.", 2]
+
+  # Gb
+  5_b_eco: ["Marc C.", 4]
+  
+  # Gc
+  5_c_social: ["Lefèbre P.", 4]
+
+  # TTr
+  5_ttr_info: ["Cauchie A.", 2]
+  5_ttr_prog: ["Cauchie A.", 2]
+  5_ttr_logi: ["Bartels J.", 2]
+
+  # 
+  # 6 ème
+  # 
+
+  # Général
+  6_math: ["C. Belot", 4]
+  6_fr: ["Vanquaethem I.", 4]
+  6_hist: ["Michel E.", 2]
+  6_geo: ["Hublet G.", 2]
+  6_lang_1: ["Jomouton I.", 4]
+  6_lang_2: ["Jomouton I.", 4]
+  6_sc_general: ["Derenne C.", 4]
+  
+  # Ga
+  6_a_chimie: ["De Buyser M.", 2]
+  6_a_bio: ["Derenne C.", 2]
+  6_a_physique: ["De Buyser M.", 2]
+
+  # Gb
+  6_b_eco: ["Marc C.", 4]
+  
+  # Gc
+  6_c_social: ["Lefèbre P.", 4]
+
+  # TTr
+  6_ttr_prog: ["Cauchie A.", 2]
+  6_ttr_logi: ["Bartels J.", 2]
