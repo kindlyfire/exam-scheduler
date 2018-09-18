@@ -20,7 +20,7 @@
         </div>
     </div>
 </template>
-e
+
 <script>
 import { mapState } from 'vuex'
 

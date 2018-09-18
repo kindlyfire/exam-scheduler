@@ -38,5 +38,23 @@
             "id": 4,
             "name": "G. Hublet"
         }
+    ],
+    "exams": [
+        {
+            "id": 1,
+            "name": "5TTr Informatique"
+        },
+        {
+            "id": 2,
+            "name": "5TTr Logicielle"
+        },
+        {
+            "id": 3,
+            "name": "5TTr Multimedia"
+        },
+        {
+            "id": 4,
+            "name": "5TTr Programmation et langages"
+        }
     ]
 }

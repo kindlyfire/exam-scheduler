@@ -35,7 +35,7 @@ export default {
                     properties: ['openFile']
                 }, 
                 (files) => {
-                    if (files.length === 0) return
+                    if (files === undefined || files.length === 0) return
 
                     this.openFile(files[0])
                 }
@@ -66,6 +66,7 @@ export default {
         populateState(state) {
             this.$store.commit('data/profs/populate', state.profs || [])
             this.$store.commit('data/classes/populate', state.classes || [])
+            this.$store.commit('data/exams/populate', state.exams || [])
         },
 
         hideError() {

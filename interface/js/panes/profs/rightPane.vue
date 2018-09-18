@@ -18,17 +18,7 @@ import editComp from './edit.vue'
 
 export default {
     name: 'prof-right-pane',
-
-    data() {
-        return {
-            emptyProf: {
-                id: null,
-                name: '',
-                blockedDates: []
-            }
-        }
-    },
-
+    
     computed: {
         ...mapState({
             profId: state => state.panes.profs.profId
@@ -42,9 +32,3 @@ export default {
     }
 }
 </script>
-
-<style>
-.add-to-list-container {
-    background-color: red;
-}
-</style>
