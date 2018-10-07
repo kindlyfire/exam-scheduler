@@ -1,0 +1,77 @@
+classes:
+  2Ca: [2]
+  2Cb: [2]
+  2Cc: [2]
+  2Cd: [2]
+  2Cf: [2]
+  2Sc: [2]
+
+course_bundles:
+  2:
+    - 2_edm
+    - 2_fr
+    - 2_lang_oral
+    - 2_lang_ecrit
+    - 2_math
+    - 2_sc
+
+blocks:
+  - classes: [2Ca, 2Cb, 2Cc, 2Cd, 2Cf, 2Sc]
+    day: 1
+    start_at: 0
+    length: 4
+
+courses:
+
+  2_edm:
+    profs:
+      - "Regnier M."
+      - "Baijot C."
+      - "Deloge A."
+      - "Ruelle C."
+    length: 4
+  
+  2_fr:
+    profs:
+      - "Naviaux D."
+      - "Meirlaen A."
+      - "Naviaux D."
+      - "Poncin P."
+      - "Detal M."
+    length: 4
+  
+  2_lang_oral:
+    profs:
+      - "Masson C."
+      - "Dawagne P."
+      - "Metz A."
+      - "Godefroid L."
+      - "Leroy S."
+      - "Nollevaux C."
+    length: 2
+  
+  2_lang_ecrit:
+    profs:
+      - "Masson C."
+      - "Dawagne P."
+      - "Metz A."
+      - "Godefroid L."
+      - "Leroy S."
+      - "Nollevaux C."
+    length: 4
+  
+  2_math:
+    profs:
+      - "Hérin J."
+      - "Malmedy J."
+      - "Lebrun V."
+      - "Lambert C."
+    length: 4
+  
+  2_sc:
+    profs:
+      - "Lamote V."
+      - "Degaudinne C."
+      - "Pochet D."
+      - "Bastin P."
+    length: 4

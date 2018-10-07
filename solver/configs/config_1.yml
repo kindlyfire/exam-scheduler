@@ -14,6 +14,12 @@ course_bundles:
     - 1_math
     - 1_edm
 
+blocks:
+  - classes: [1Ca, 1Cb, 1Cc, 1Cd, 1Cf]
+    day: 1
+    start_at: 0
+    length: 4
+
 courses:
 
   1_lang_oral:

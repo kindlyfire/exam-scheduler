@@ -22,6 +22,7 @@ merger = Merger(
 DAYS = 7
 
 def run(scen):
+
     if solvers.mip.solve(scen, msg=1):
         print(scen.solution())
         plotters.matplotlib.plot(scen, img_filename='out.png', fig_size=(len(config['tclasses']), DAYS * 2))
@@ -45,8 +46,16 @@ def transform_classes(config):
 
     return classes
 
-config = yaml.load(open('configs/config_1.yml', 'r'))
-merger.merge(config, yaml.load(open('configs/config_6.yml', 'r')))
+config = {}
+config_files = [
+    'config_1',
+    'config_2',
+    'config_6'
+]
+
+for c in config_files:
+    merger.merge(config, yaml.load(open('configs/%s.yml' % (c,), 'r')))
+
 config['tclasses'] = transform_classes(config)
 
 scen = Scenario('Schedule', horizon=(DAYS * 5))
@@ -83,5 +92,16 @@ for course, info in config['courses'].items():
     for cls, cls_courses in config['tclasses'].items():
         if course in cls_courses:
             task += classes[cls]
+
+i = 0
+blocks = {}
+for block in config["blocks"]:
+    i += 1
+    blocks["block_" + str(i)] = task = scen.Task("block_" + str(i), block["length"])
+    task.periods = [block["day"] * 5 - 5 + block["start_at"]]
+    task.plot_color = '#000000'
+    
+    for cl in block["classes"]:
+        task += classes[cl]
 
 run(scen)
