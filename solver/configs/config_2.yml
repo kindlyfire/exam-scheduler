@@ -1,0 +1,33 @@
+classes:
+  1Ca: [1, 101]
+  1Cb: [1, 102]
+  1Cc: [1, 103]
+  1Cd: [1, 104]
+  1Cf: [1, 105]
+
+course_bundles:
+  1:
+    - 1_lang_oral
+    - 1_lang_ecrit
+
+courses:
+
+  1_lang_oral:
+    profs:
+      - "Masson C."
+      - "Dawagne P."
+      - "Metz A."
+      - "Godefroid L."
+      - "Leroy S."
+      - "Nollevaux C."
+    length: 2
+  
+  1_lang_ecrit:
+    profs:
+      - "Masson C."
+      - "Dawagne P."
+      - "Metz A."
+      - "Godefroid L."
+      - "Leroy S."
+      - "Nollevaux C."
+    length: 4
