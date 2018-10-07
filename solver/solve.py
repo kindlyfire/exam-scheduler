@@ -45,7 +45,7 @@ def transform_classes(config):
 
     return classes
 
-config = yaml.load(open('configs/config_2.yml', 'r'))
+config = yaml.load(open('configs/config_1.yml', 'r'))
 merger.merge(config, yaml.load(open('configs/config_6.yml', 'r')))
 config['tclasses'] = transform_classes(config)
 
