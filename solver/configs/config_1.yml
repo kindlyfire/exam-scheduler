@@ -9,6 +9,10 @@ course_bundles:
   1:
     - 1_lang_oral
     - 1_lang_ecrit
+    - 1_fr
+    - 1_sc
+    - 1_math
+    - 1_edm
 
 courses:
 
@@ -19,7 +23,6 @@ courses:
       - "Metz A."
       - "Godefroid L."
       - "Leroy S."
-      - "Nollevaux C."
     length: 2
   
   1_lang_ecrit:
@@ -29,5 +32,33 @@ courses:
       - "Metz A."
       - "Godefroid L."
       - "Leroy S."
-      - "Nollevaux C."
+    length: 2
+
+  1_fr:
+    profs:
+      - "Naviaux D."
+      - "Noël C."
+      - "Baijot C."
+    length: 4
+
+  1_sc:
+    profs:
+      - "Degaudinne C."
+      - "Bastin P."
+      - "Pochet D."
+      - "Lamote V."
+    length: 4
+
+  1_math:
+    profs:
+      - "Malmedy J."
+      - "Rihoux J."
+      - "Denis M."
+    length: 4
+
+  1_edm:
+    profs:
+      - "Ruelle C."
+      - "Regnier M."
+      - "Deloge A."
     length: 4
