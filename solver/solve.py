@@ -50,6 +50,7 @@ config = {}
 config_files = [
     'config_1',
     'config_2',
+    'config_3',
     'config_6'
 ]
 
@@ -57,6 +58,7 @@ for c in config_files:
     merger.merge(config, yaml.load(open('configs/%s.yml' % (c,), 'r')))
 
 config['tclasses'] = transform_classes(config)
+config['blocks'] = config['blocks'] if 'blocks' in config else {}
 
 scen = Scenario('Schedule', horizon=(DAYS * 5))
 

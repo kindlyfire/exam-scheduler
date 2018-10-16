@@ -15,11 +15,11 @@ course_bundles:
     - 2_math
     - 2_sc
 
-blocks:
-  - classes: [2Ca, 2Cb, 2Cc, 2Cd, 2Cf, 2Sc]
-    day: 1
-    start_at: 0
-    length: 4
+# blocks:
+#   - classes: [2Ca, 2Cb, 2Cc, 2Cd, 2Cf, 2Sc]
+#     day: 1
+#     start_at: 0
+#     length: 4
 
 courses:
 

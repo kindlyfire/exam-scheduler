@@ -5,6 +5,9 @@ classes:
   1Cd: [1, 104]
   1Cf: [1, 105]
 
+  1Dab: [106]
+  2Dab: [106]
+
 course_bundles:
   1:
     - 1_lang_oral
@@ -13,12 +16,20 @@ course_bundles:
     - 1_sc
     - 1_math
     - 1_edm
+  
+  106:
+    - 1_dab_dessin
+    - 1_dab_lang
+    - 1_dab_lire_1
+    - 1_dab_science
+    - 1_dab_lire_2
+    - 1_dab_math
 
-blocks:
-  - classes: [1Ca, 1Cb, 1Cc, 1Cd, 1Cf]
-    day: 1
-    start_at: 0
-    length: 4
+# blocks:
+#   - classes: [1Ca, 1Cb, 1Cc, 1Cd, 1Cf]
+#     day: 1
+#     start_at: 0
+#     length: 4
 
 courses:
 
@@ -67,4 +78,39 @@ courses:
       - "Ruelle C."
       - "Regnier M."
       - "Deloge A."
+    length: 4
+  
+  1_dab_dessin:
+    profs:
+      - "Poncelet T."
+    length: 4
+
+  1_dab_lang:
+    profs:
+      - "Godefroid L."
+      - "Metz A."
+    length: 4
+
+  1_dab_lire_1:
+    profs:
+      - "Rihoux J."
+      - "Grégoire C."
+    length: 4
+
+  1_dab_science:
+    profs:
+      - "Deloge A."
+      - "Baijot C."
+    length: 4
+
+  1_dab_lire_2:
+    profs:
+      - "Ruelle C."
+      - "Dawagne L."
+    length: 4
+
+  1_dab_math:
+    profs:
+      - "Poncelet T."
+      - "Denis M."
     length: 4

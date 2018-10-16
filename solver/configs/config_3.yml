@@ -1,0 +1,14 @@
+classes:
+  3Ga: [3, 301]
+  3Gb: [3, 302]
+  3Gc: [3, 302]
+  3TTr: [3, 302]
+
+course_bundles:
+  3:
+    - 3_math
+    - 3_hist
+    - 3_geo
+    - 3_sciences_gen
+
+courses: {}
